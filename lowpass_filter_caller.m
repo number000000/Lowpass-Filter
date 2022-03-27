@@ -11,8 +11,8 @@ function output = lowpass_filter_caller(filename, cutoff)
     disp('sample frequency:');
     disp(fs);
 
-    if (fs < cutoff)
-        error('Cutoff too large, please make it less than sample frequency.');
+    if ((fs/2) < cutoff)
+        error('Cutoff too large. Please make it less than half of the sample frequency.');
     end
     %PLOT: use as desired
     %subplot(7, 1, 1);
